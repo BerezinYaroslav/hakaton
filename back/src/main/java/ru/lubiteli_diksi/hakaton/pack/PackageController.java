@@ -19,9 +19,13 @@ public class PackageController {
 
     @GetMapping
     public List<Package> getClients() {
+        setChannelCount();
+        return repository.findAll();
+    }
+
+    public void setChannelCount() {
         List<Package> packages = repository.findAll();
         packages.forEach(pack -> pack.setChannelCount(channelRepository.findChannelsCount(pack.getName())));
         packages.forEach(repository::save);
-        return packages;
     }
 }

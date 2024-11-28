@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+  # DB**
+  postgres:
+    restart: always
+    container_name: hakaton-pg
+    image: postgres:latest
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=hakaton
