@@ -3,13 +3,6 @@ package ru.lubiteli_diksi.hakaton.channel;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.lubiteli_diksi.hakaton.address.Address;
-import ru.lubiteli_diksi.hakaton.address.AddressService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import ru.lubiteli_diksi.hakaton.pack.PackageController;
 
 import java.util.List;
 
@@ -45,7 +38,7 @@ public class ChannelController {
         channelService.deleteChannels();
     }
 
-    @DeleteMapping(value = "/{id`}", produces = "application/json")
+    @DeleteMapping(value = "/{id}", produces = "application/json")
     public void deleteChannelById(@PathVariable Integer id) {
         channelService.deleteChannelById(id);
     }
