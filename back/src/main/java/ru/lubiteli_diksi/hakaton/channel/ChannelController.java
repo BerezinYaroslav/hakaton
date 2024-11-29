@@ -40,7 +40,7 @@ public class ChannelController {
         channelService.deleteChannels();
     }
 
-    @DeleteMapping(value = "/{id`}", produces = "application/json")
+    @DeleteMapping(value = "/{id}", produces = "application/json")
     public void deleteChannelById(@PathVariable Integer id) {
         channelService.deleteChannelById(id);
     }

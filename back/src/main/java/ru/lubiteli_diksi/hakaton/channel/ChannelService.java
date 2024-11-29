@@ -11,7 +11,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class ChannelService {
-    private ChannelRepository channelRepository;
+    private final ChannelRepository channelRepository;
 
     public Channel addChannel(Channel address) {
         log.info("add a chanel");
