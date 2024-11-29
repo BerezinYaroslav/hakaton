@@ -3,8 +3,6 @@ package ru.lubiteli_diksi.hakaton.channel;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.lubiteli_diksi.hakaton.address.Address;
-import ru.lubiteli_diksi.hakaton.address.AddressService;
 
 import java.util.List;
 

@@ -21,4 +21,6 @@ public class Address {
     private Integer entrances;
 
     private String floors;
+
+    private String coordinates;
 }
