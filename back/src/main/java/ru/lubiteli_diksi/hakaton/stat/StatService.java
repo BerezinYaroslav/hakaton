@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +25,8 @@ public class StatService {
     }
 
     public List<Map<String, Integer>> getMostPopularDevices() {
+
+
         return repository.findMostPopularDevices();
     }
 
@@ -51,6 +54,15 @@ public class StatService {
         return repository.findAgeStats(age);
     }
 
+    public Map<String, Integer> getAverageTimeByAgeAndCategory(String age) {
+        Map<String, Integer> map = new HashMap<>();
+
+        List<String> categories = repository.findAllCategories();
+        categories.forEach(category -> map.put(category, repository.findAverageTimeByAgeAndCategory(age, category)));
+
+        return map;
+    }
+
     public Stat findStatById(Integer id) {
         log.info("get stat where id = {}", id);
         return repository.findById(id)
@@ -71,4 +83,24 @@ public class StatService {
         log.info("Delete a stat with id " + id);
         repository.deleteById(id);
     }
+
+//    public void executePython(String[] args) throws IOException, InterruptedException {
+//        String Script_Path = "C:\\Users\\Mironov\\script.py";
+//        ProcessBuilder Process_Builder = new
+//                ProcessBuilder("python",Script_Path)
+//                .inheritIO();
+//
+//        Process Demo_Process = Process_Builder.start();
+//        Demo_Process.waitFor();
+//
+//        BufferedReader Buffered_Reader = new BufferedReader(
+//                new InputStreamReader(
+//                        Demo_Process.getInputStream()
+//                ));
+//        String Output_line = "";
+//
+//        while ((Output_line = Buffered_Reader.readLine()) != null) {
+//            System.out.println(Output_line);
+//        }
+//    }
 }

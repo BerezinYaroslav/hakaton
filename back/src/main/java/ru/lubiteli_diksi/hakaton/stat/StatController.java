@@ -49,6 +49,10 @@ public class StatController {
         return service.getAgeStats(age);
     }
 
+    @GetMapping(value = "/elka/{age}")
+    public Map<String, Integer> getAverageTimeByAgeAndCategory(@PathVariable String age) {
+        return service.getAverageTimeByAgeAndCategory(age);
+    }
 
     @GetMapping(value = "/{id}")
     public Stat getStatById(@PathVariable Integer id) {

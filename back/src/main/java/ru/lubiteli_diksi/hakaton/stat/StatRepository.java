@@ -46,4 +46,14 @@ public interface StatRepository extends JpaRepository<Stat, Integer> {
             "left join client c on c.client = s.client " +
             "where c.age = ?1", nativeQuery = true)
     List<Stat> findAgeStats(String age);
+
+    @Query(value = "select avg(s.duration) " +
+            "from stat s " +
+            "left join client c on c.client = s.client " +
+            "where c.age = ?1 " +
+            "and s.category = ?2", nativeQuery = true)
+    Integer findAverageTimeByAgeAndCategory(String age, String category);
+
+    @Query(value = "select distinct s.category from stat s", nativeQuery = true)
+    List<String> findAllCategories();
 }
