@@ -16,7 +16,6 @@ public class PackageController {
 
     @GetMapping
     public List<Package> getPackages() {
-        service.setChannelCount();
         return service.getPackages();
     }
 

@@ -1,5 +1,6 @@
 package ru.lubiteli_diksi.hakaton.pack;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -18,5 +19,6 @@ public class Package {
     @Id
     private String name;
 
+    @Column(name = "channel_count")
     private Integer channelCount;
 }

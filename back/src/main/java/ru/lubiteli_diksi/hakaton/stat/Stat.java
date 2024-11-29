@@ -26,15 +26,20 @@ public class Stat {
 
     private String device;
 
-    private Timestamp time_ch;
+    @Column(name = "time_ch")
+    private Timestamp timeCh;
 
-    private Integer channel_id;
+    @Column(name = "channel_id")
+    private Integer channelId;
 
-    private String epg_name;
+    @Column(name = "epg_name")
+    private String epgName;
 
-    private Timestamp time_epg;
+    @Column(name = "time_epg")
+    private Timestamp timeEpg;
 
-    private Timestamp time_to_epg;
+    @Column(name = "time_to_epg")
+    private Timestamp timeToEpg;
 
     private Integer duration;
 
