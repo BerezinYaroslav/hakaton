@@ -8262,6 +8262,7 @@ VALUES (192, 'Спорт+ HD'),
        (218, 'TV Бизнес'),
        (179, 'TV Бизнес');
 
-UPDATE channel_package
-SET channel_count = 0
+UPDATE channel_package cp
+SET channel_count = (SELECT COUNT(*) FROM channel c where c.package = cp.name)
 WHERE channel_count IS NULL
+

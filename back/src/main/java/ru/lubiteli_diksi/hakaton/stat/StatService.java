@@ -1,8 +1,8 @@
 package ru.lubiteli_diksi.hakaton.stat;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.lubiteli_diksi.hakaton.dto.Dto;
 
 import java.util.List;
 import java.util.Map;
@@ -37,6 +37,18 @@ public class StatService {
 
     public List<Map<String, Integer>> getMostPopularDeviceSubcategories() {
         return repository.findMostPopularSubcategories();
+    }
+
+    public List<Stat> getGenderStats(String gender) {
+        if (gender.equals("М")) {
+            gender = "M";
+        }
+
+        return repository.findGenderStats(gender);
+    }
+
+    public List<Stat> getAgeStats(String age) {
+        return repository.findAgeStats(age);
     }
 
     public Stat findStatById(Integer id) {

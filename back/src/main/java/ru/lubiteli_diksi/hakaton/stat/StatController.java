@@ -3,7 +3,6 @@ package ru.lubiteli_diksi.hakaton.stat;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.lubiteli_diksi.hakaton.dto.Dto;
 
 import java.util.List;
 import java.util.Map;
@@ -39,6 +38,17 @@ public class StatController {
     public List<Map<String, Integer>> getMostPopularSubcategories() {
         return service.getMostPopularDeviceSubcategories();
     }
+
+    @GetMapping(value = "/gender/{gender}")
+    public List<Stat> getGenderStats(@PathVariable String gender) {
+        return service.getGenderStats(gender);
+    }
+
+    @GetMapping(value = "/age/{age}")
+    public List<Stat> getAgeStats(@PathVariable String age) {
+        return service.getAgeStats(age);
+    }
+
 
     @GetMapping(value = "/{id}")
     public Stat getStatById(@PathVariable Integer id) {

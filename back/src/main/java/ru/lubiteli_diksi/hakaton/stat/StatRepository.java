@@ -7,31 +7,43 @@ import java.util.List;
 import java.util.Map;
 
 public interface StatRepository extends JpaRepository<Stat, Integer> {
-    @Query(value = "SELECT device, COUNT(*) " +
-            "FROM stat " +
+    @Query(value = "select device, COUNT(*) " +
+            "from stat " +
             "group by device " +
             "order by COUNT(*) desc " +
             "limit 5", nativeQuery = true)
     List<Map<String, Integer>> findMostPopularDevices();
 
-    @Query(value = "SELECT channel_id, SUM(duration) " +
-            "FROM stat " +
+    @Query(value = "select channel_id, SUM(duration) " +
+            "from stat " +
             "group by channel_id " +
             "order by SUM(duration) desc " +
             "limit 5", nativeQuery = true)
     List<Map<String, Integer>> findMostPopularChannels();
 
-    @Query(value = "SELECT category, SUM(duration) " +
-            "FROM stat " +
+    @Query(value = "select category, SUM(duration) " +
+            "from stat " +
             "group by category " +
             "order by SUM(duration) desc " +
             "limit 5", nativeQuery = true)
     List<Map<String, Integer>> findMostPopularCategories();
 
-    @Query(value = "SELECT subcategory, SUM(duration) " +
-            "FROM stat " +
+    @Query(value = "select subcategory, SUM(duration) " +
+            "from stat " +
             "group by subcategory " +
             "order by SUM(duration) desc " +
             "limit 5", nativeQuery = true)
     List<Map<String, Integer>> findMostPopularSubcategories();
+
+    @Query(value = "select s.* " +
+            "from stat s " +
+            "left join client c on c.client = s.client " +
+            "where c.gender = ?1", nativeQuery = true)
+    List<Stat> findGenderStats(String gender);
+
+    @Query(value = "select s.* " +
+            "from stat s " +
+            "left join client c on c.client = s.client " +
+            "where c.age = ?1", nativeQuery = true)
+    List<Stat> findAgeStats(String age);
 }

@@ -3,7 +3,6 @@ package ru.lubiteli_diksi.hakaton.channel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.lubiteli_diksi.hakaton.pack.PackageService;
 
 import java.util.List;
 
@@ -11,9 +10,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class ChannelService {
-
     private final ChannelRepository channelRepository;
-    private final PackageService packageService;
 
     public Channel addChannel(Channel address) {
         log.info("add a chanel");
@@ -22,7 +19,6 @@ public class ChannelService {
 
     public List<Channel> getChannels() {
         log.info("get channels");
-        packageService.setChannelCount();
         return channelRepository.findAll();
     }
 
