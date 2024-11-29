@@ -8261,3 +8261,7 @@ VALUES (192, 'Спорт+ HD'),
        (195, 'TV Бизнес'),
        (218, 'TV Бизнес'),
        (179, 'TV Бизнес');
+
+UPDATE channel_package
+SET channel_count = 0
+WHERE channel_count IS NULL
