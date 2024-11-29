@@ -1,9 +1,9 @@
 create table address
 (
-    address   varchar(100) primary key,
-    flats     int,
-    entrances int,
-    floors    varchar(200),
+    address     varchar(100) primary key,
+    flats       int,
+    entrances   int,
+    floors      varchar(200),
     coordinates varchar(50)
 );
 
@@ -29,7 +29,7 @@ create table channel
 
 create table stat
 (
-    id          int,
+    id          int generated always as identity primary key,
     client      varchar(50) references client (client),
     device      varchar(50),
     time_ch     timestamp,

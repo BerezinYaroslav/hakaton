@@ -17,6 +17,11 @@ public class StatController {
         return service.getStats();
     }
 
+    @GetMapping(value = "/devices")
+    public List<String> getMostPopular() {
+        return service.getMostPopularChannels();
+    }
+
     @GetMapping(value = "/{id}")
     public Stat getStatById(@PathVariable Integer id) {
         return service.findStatById(id);

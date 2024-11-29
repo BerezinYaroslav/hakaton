@@ -3,8 +3,12 @@ package ru.lubiteli_diksi.hakaton.stat;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-public interface StatRepository extends JpaRepository<Stat, Integer> {
+import java.util.List;
 
-    @Query(value = "SELECT count(*) FROM channel where package = ?1", nativeQuery = true)
-    Integer findChannelsCount(String packageName);
+public interface StatRepository extends JpaRepository<Stat, Integer> {
+    @Query(value =
+            "SELECT device FROM stat " +
+            "group by device " +
+            "order by COUNT(*) desc limit 5", nativeQuery = true)
+    List<String> findMostPopularDevices();
 }

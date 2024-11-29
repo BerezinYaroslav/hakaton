@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.lubiteli_diksi.hakaton.client.Client;
 
-import java.security.Timestamp;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -17,7 +17,6 @@ import java.security.Timestamp;
 @Table(name = "stat")
 public class Stat {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
@@ -27,7 +26,7 @@ public class Stat {
     private String device;
 
     @Column(name = "time_ch")
-    private Timestamp timeCh;
+    private LocalDateTime timeCh;
 
     @Column(name = "channel_id")
     private Integer channelId;
@@ -36,10 +35,10 @@ public class Stat {
     private String epgName;
 
     @Column(name = "time_epg")
-    private Timestamp timeEpg;
+    private LocalDateTime timeEpg;
 
     @Column(name = "time_to_epg")
-    private Timestamp timeToEpg;
+    private LocalDateTime timeToEpg;
 
     private Integer duration;
 

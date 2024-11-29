@@ -19,7 +19,10 @@ public class StatService {
     public List<Stat> getStats() {
         log.info("get stats");
         return repository.findAll();
+    }
 
+    public List<String> getMostPopularChannels() {
+        return repository.findMostPopularDevices();
     }
 
     public Stat findStatById(Integer id) {
