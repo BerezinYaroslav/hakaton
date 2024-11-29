@@ -3,6 +3,8 @@ package ru.lubiteli_diksi.hakaton.stat;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.lubiteli_diksi.hakaton.dto.PopularDeviceDTO;
+
 import java.util.List;
 
 @RestController
@@ -40,5 +42,10 @@ public class StatController {
     @DeleteMapping(value = "/{id}", produces = "application/json")
     public void deleteStatById(@PathVariable Integer id) {
         service.deleteStatById(id);
+    }
+
+    @GetMapping(value = "/popular_devices")
+    public List<PopularDeviceDTO> getPopularDevices() {
+        return service.getPopularDevices();
     }
 }

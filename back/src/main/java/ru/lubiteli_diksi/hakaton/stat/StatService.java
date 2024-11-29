@@ -2,6 +2,7 @@ package ru.lubiteli_diksi.hakaton.stat;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.lubiteli_diksi.hakaton.dto.PopularDeviceDTO;
 
 import java.util.List;
 
@@ -41,5 +42,9 @@ public class StatService {
     public void deleteStatById(Integer id) {
         log.info("Delete a stat with id " + id);
         repository.deleteById(id);
+    }
+
+    public List<PopularDeviceDTO> getPopularDevices() {
+        return repository.getPopularDevices();
     }
 }
