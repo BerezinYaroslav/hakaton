@@ -2,8 +2,10 @@ package ru.lubiteli_diksi.hakaton.stat;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.lubiteli_diksi.hakaton.dto.Dto;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
@@ -21,8 +23,20 @@ public class StatService {
         return repository.findAll();
     }
 
-    public List<String> getMostPopularChannels() {
+    public List<Map<String, Integer>> getMostPopularDevices() {
         return repository.findMostPopularDevices();
+    }
+
+    public List<Map<String, Integer>> getMostPopularChannels() {
+        return repository.findMostPopularChannels();
+    }
+
+    public List<Map<String, Integer>> getMostPopularDeviceCategories() {
+        return repository.findMostPopularCategories();
+    }
+
+    public List<Map<String, Integer>> getMostPopularDeviceSubcategories() {
+        return repository.findMostPopularSubcategories();
     }
 
     public Stat findStatById(Integer id) {

@@ -3,7 +3,10 @@ package ru.lubiteli_diksi.hakaton.stat;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.lubiteli_diksi.hakaton.dto.Dto;
+
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/stats")
@@ -18,8 +21,23 @@ public class StatController {
     }
 
     @GetMapping(value = "/devices")
-    public List<String> getMostPopular() {
+    public List<Map<String, Integer>> getMostPopularDevices() {
+        return service.getMostPopularDevices();
+    }
+
+    @GetMapping(value = "/channels")
+    public List<Map<String, Integer>> getMostPopularChannels() {
         return service.getMostPopularChannels();
+    }
+
+    @GetMapping(value = "/categories")
+    public List<Map<String, Integer>> getMostPopularCategories() {
+        return service.getMostPopularDeviceCategories();
+    }
+
+    @GetMapping(value = "/subcategories")
+    public List<Map<String, Integer>> getMostPopularSubcategories() {
+        return service.getMostPopularDeviceSubcategories();
     }
 
     @GetMapping(value = "/{id}")
