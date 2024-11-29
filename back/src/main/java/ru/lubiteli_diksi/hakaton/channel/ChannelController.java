@@ -11,35 +11,35 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin(maxAge = 3600, origins = "http://localhost:5173", allowedHeaders = "*")
 public class ChannelController {
-    private final ChannelService channelService;
+    private final ChannelService service;
 
     @GetMapping
     public List<Channel> getChannels() {
-        return channelService.getChannels();
+        return service.getChannels();
     }
 
     @GetMapping(value = "/{id}")
-    public Channel getAddressById(@PathVariable Integer id) {
-        return channelService.findChannelById(id);
+    public Channel getChannelById(@PathVariable Integer id) {
+        return service.findChannelById(id);
     }
 
     @PostMapping(produces = "application/json")
     public Channel addChannel(@RequestBody @Valid Channel channel) {
-        return channelService.addChannel(channel);
+        return service.addChannel(channel);
     }
 
     @PutMapping(produces = "application/json")
-    public Channel updateAddress(@RequestBody @Valid Channel channel) {
-        return channelService.updateChannel(channel);
+    public Channel updateChannel(@RequestBody @Valid Channel channel) {
+        return service.updateChannel(channel);
     }
 
     @DeleteMapping(produces = "application/json")
     public void deleteChannels() {
-        channelService.deleteChannels();
+        service.deleteChannels();
     }
 
     @DeleteMapping(value = "/{id}", produces = "application/json")
     public void deleteChannelById(@PathVariable Integer id) {
-        channelService.deleteChannelById(id);
+        service.deleteChannelById(id);
     }
 }
