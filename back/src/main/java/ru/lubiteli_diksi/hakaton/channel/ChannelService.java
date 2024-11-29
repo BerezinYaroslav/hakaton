@@ -11,12 +11,13 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class ChannelService {
+
     private final ChannelRepository channelRepository;
     private final PackageService packageService;
 
     public Channel addChannel(Channel address) {
         log.info("add a chanel");
-        return channelRepository.save(address);
+        return repository.save(address);
     }
 
     public List<Channel> getChannels() {
@@ -27,18 +28,18 @@ public class ChannelService {
 
     public Channel findChannelById(Integer id) {
         log.info("get chanel where id = {}", id);
-        return channelRepository.findById(id)
+        return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("There is no a id " + id));
     }
 
     public Channel updateChannel(Channel channel) {
         log.info("update a channel");
-        return channelRepository.save(channel);
+        return repository.save(channel);
     }
 
     public void deleteChannels() {
         log.info("Delete channels");
-        channelRepository.deleteAll();
+        repository.deleteAll();
     }
 
     public void deleteChannelById(Integer id) {

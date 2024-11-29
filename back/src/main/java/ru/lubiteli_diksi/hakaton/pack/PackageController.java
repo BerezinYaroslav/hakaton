@@ -1,10 +1,9 @@
 package ru.lubiteli_diksi.hakaton.pack;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import ru.lubiteli_diksi.hakaton.stat.Stat;
 
 import java.util.List;
 
@@ -18,5 +17,30 @@ public class PackageController {
     @GetMapping
     public List<Package> getPackages() {
         return service.getPackages();
+    }
+
+    @GetMapping(value = "/{id}")
+    public Package getPackageByName(@PathVariable String name) {
+        return service.findPackageByName(name);
+    }
+
+    @PostMapping(produces = "application/json")
+    public Package addPackage(@RequestBody @Valid Package pack) {
+        return service.addPackage(pack);
+    }
+
+    @PutMapping(produces = "application/json")
+    public Package updatePackage(@RequestBody @Valid Package pack) {
+        return service.updatePackage(pack);
+    }
+
+    @DeleteMapping(produces = "application/json")
+    public void deletePackages() {
+        service.deletePackages();
+    }
+
+    @DeleteMapping(value = "/{id}", produces = "application/json")
+    public void deletePackageByName(@PathVariable String name) {
+        service.deletePackageByName(name);
     }
 }
