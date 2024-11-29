@@ -25,3 +25,17 @@ create table channel
     id      int,
     package varchar(100) references channel_package (name) on delete set null
 );
+
+create table stat
+(
+    client      varchar(50) references client (client),
+    device      varchar(50),
+    time_ch     timestamp,
+    channel_id  int,
+    epg_name    varchar(200),
+    time_epg    timestamp,
+    time_to_epg timestamp,
+    duration    int,
+    category    varchar(50),
+    subcategory varchar(50)
+);
