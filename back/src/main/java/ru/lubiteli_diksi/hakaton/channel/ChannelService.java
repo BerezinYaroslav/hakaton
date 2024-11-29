@@ -17,7 +17,7 @@ public class ChannelService {
 
     public Channel addChannel(Channel address) {
         log.info("add a chanel");
-        return repository.save(address);
+        return channelRepository.save(address);
     }
 
     public List<Channel> getChannels() {
@@ -28,18 +28,18 @@ public class ChannelService {
 
     public Channel findChannelById(Integer id) {
         log.info("get chanel where id = {}", id);
-        return repository.findById(id)
+        return channelRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("There is no a id " + id));
     }
 
     public Channel updateChannel(Channel channel) {
         log.info("update a channel");
-        return repository.save(channel);
+        return channelRepository.save(channel);
     }
 
     public void deleteChannels() {
         log.info("Delete channels");
-        repository.deleteAll();
+        channelRepository.deleteAll();
     }
 
     public void deleteChannelById(Integer id) {
