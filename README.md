@@ -27,5 +27,5 @@
 ## Один из макетов
 ![maket_1.jpeg](img/maket_1.jpeg)
 
-## Один из графиков
+## Один из графиков кластерного анализа
 ![cluster_analysis_3.jpeg](img/cluster_analysis_3.jpeg)
