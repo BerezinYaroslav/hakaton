@@ -1,7 +1,7 @@
 package ru.lubiteli_diksi.hakaton.address;
 
-import lombok.RequiredArgsConstructor;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,17 +13,18 @@ import java.util.List;
 public class AddressController {
     private final AddressService service;
 
-    @GetMapping
+    @GetMapping(produces = "application/json")
     public List<Address> getAddresses() {
         return service.getAddresses().stream()
                 .filter(address -> address.getFloors().length() <= 3)
                 .toList();
     }
 
-    @GetMapping(value = "/{address}")
+    @GetMapping(value = "/{address}", produces = "application/json")
     public Address getAddressByAddress(@PathVariable String address) {
         return service.findAddressByAddress(address);
     }
+
 
     @PostMapping(produces = "application/json")
     public Address addAddress(@RequestBody @Valid Address address) {

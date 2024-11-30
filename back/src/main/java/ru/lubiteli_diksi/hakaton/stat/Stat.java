@@ -1,5 +1,6 @@
 package ru.lubiteli_diksi.hakaton.stat;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "stat")
+@Schema(name = "Statistics", description = "Statistics entity")
 public class Stat {
     @Id
     private Integer id;

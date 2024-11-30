@@ -1,5 +1,6 @@
 package ru.lubiteli_diksi.hakaton.address;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "address")
+@Schema(name = "Address", description = "Address entity")
 public class Address {
     @Id
     private String address;

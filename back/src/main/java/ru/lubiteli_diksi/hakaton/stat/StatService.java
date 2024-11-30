@@ -25,8 +25,6 @@ public class StatService {
     }
 
     public List<Map<String, Integer>> getMostPopularDevices() {
-
-
         return repository.findMostPopularDevices();
     }
 

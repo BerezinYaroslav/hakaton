@@ -1,5 +1,6 @@
 package ru.lubiteli_diksi.hakaton.pack;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -15,6 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "channel_package")
+@Schema(name = "Channel package", description = "Channel package")
 public class Package {
     @Id
     private String name;

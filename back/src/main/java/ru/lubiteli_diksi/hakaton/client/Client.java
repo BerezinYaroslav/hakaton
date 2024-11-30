@@ -1,5 +1,6 @@
 package ru.lubiteli_diksi.hakaton.client;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +14,7 @@ import ru.lubiteli_diksi.hakaton.address.Address;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "client")
+@Schema(name = "Client", description = "Client entity")
 public class Client {
     @Id
     private String client;
