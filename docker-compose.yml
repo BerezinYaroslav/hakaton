@@ -23,23 +23,23 @@ services:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=hakaton
 
-  # # BACK
-  # back:
-  #   build: ./back/
-  #   environment:
-  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/hakaton
-  #     - SPRING_DATASOURCE_USERNAME=admin
-  #     - SPRING_DATASOURCE_PASSWORD=admin
-  #   depends_on:
-  #     - postgres
-  #   expose:
-  #     - '8080'
-  #   ports:
-  #     - '8080:8080'
+  # BACK
+  back:
+    build: ./back/
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/hakaton
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+    depends_on:
+      - postgres
+    expose:
+      - '8080'
+    ports:
+      - '8080:8080'
 
-  # # FRONT
-  # front:
-  #   container_name: stride-front
-  #   build: ./client
-  #   ports:
-  #     - '5173:5173'
+  # FRONT
+  front:
+    container_name: hakaton-front
+    build: ./front
+    ports:
+      - '5173:5173'
