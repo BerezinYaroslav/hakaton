@@ -3,14 +3,13 @@ package ru.lubiteli_diksi.hakaton.pack;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.lubiteli_diksi.hakaton.stat.Stat;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/packages")
 @RequiredArgsConstructor
-@CrossOrigin(maxAge = 3600, origins = "http://localhost:5173", allowedHeaders = "*")
+@CrossOrigin(maxAge = 3600, origins = {"http://51.250.92.174:5173", "http://51.250.92.174", "freedom-dashboard-tv.ru"}, allowedHeaders = "*")
 public class PackageController {
     private final PackageService service;
 

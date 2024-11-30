@@ -39,7 +39,7 @@ try:
             count += 1
             print(count)
 
-            if count >= 10000:
+            if count >= 100000:
                 break
 
             # Разбираем строку

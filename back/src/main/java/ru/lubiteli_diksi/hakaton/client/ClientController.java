@@ -8,7 +8,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/clients")
 @RequiredArgsConstructor
-@CrossOrigin(maxAge = 3600, origins = "http://localhost:5173", allowedHeaders = "*")
+@CrossOrigin(maxAge = 3600, origins = {"http://51.250.92.174:5173", "http://51.250.92.174", "freedom-dashboard-tv.ru"}, allowedHeaders = "*")
 public class ClientController {
     private final ClientService service;
 

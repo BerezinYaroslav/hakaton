@@ -16,6 +16,20 @@ spring:
     multipart:
       max-file-size: 300MB
       max-request-size: 300MB
+  mail:
+    host: smtp.yandex.ru
+    username: berezin-work@yandex.ru
+    password: fnxcwoecbjfnfnap
+    port: 465
+    protocol: smtps
+    subject: Письмо от FreedomDashboardTV
+    recipients: egor1414148@gmail.com
+  properties:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          enables: true
 
 minio:
   bucket: files
