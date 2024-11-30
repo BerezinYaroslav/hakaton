@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +10,8 @@ import {
 } from 'chart.js';
 import Charts from '../Charts/Charts.jsx';
 import api from '../../utils/Api.js';
+import analiz1 from '../../assets/images/analiz_1.jpg';
+import analiz2 from '../../assets/images/analiz_2.jpg';
 
 function Stats() {
   ChartJS.register(
@@ -87,6 +88,11 @@ function Stats() {
           />
         )
       }
+      <h1 className="stats__title">
+        Кластерный анализ
+      </h1>
+      <img src={analiz1} alt="кластерный анализ" className="stast__chart" />
+      <img src={analiz2} alt="кластерный анализ" className="stast__chart" />
     </div>
   );
 }

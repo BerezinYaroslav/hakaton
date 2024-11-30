@@ -19,6 +19,14 @@ function Dashboard() {
     URL.revokeObjectURL(url);
   }
 
+  function handleEmailReport() {
+    let payload = '';
+    stats.map((stat) => payload += (`${stat.client.client},${stat.client.address.address},${stat.client.gender},${stat.client.age},${stat.duration},${stat.channelId},${stat.category};\n`));
+
+    api.sendEmailReport(payload)
+      .then(() => console.log('Успешно отправлено'));
+  }
+
   useEffect(() => {
     if (activeFilter === '') {
       api.getAllStats()
@@ -127,7 +135,7 @@ function Dashboard() {
           <button type="button" className="dashboard__link" onClick={handleDownloadReport}>
             Скачать отчет
           </button>
-          <button type="button" className="dashboard__link" onClick={handleDownloadReport}>
+          <button type="button" className="dashboard__link" onClick={handleEmailReport}>
             Отправить на email
           </button>
         </div>
