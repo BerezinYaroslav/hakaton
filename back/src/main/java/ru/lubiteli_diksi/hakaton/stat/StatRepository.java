@@ -56,4 +56,12 @@ public interface StatRepository extends JpaRepository<Stat, Integer> {
 
     @Query(value = "select distinct s.category from stat s", nativeQuery = true)
     List<String> findAllCategories();
+
+    @Query(value = "select c.package, to_char(cast(ceil(avg(s.sum)) as numeric), 'FM999999999') avg_time " +
+            "from (select channel_id, sum(duration) sum from stat s group by channel_id) s " +
+            "         join channel c on s.channel_id = c.id " +
+            "group by c.package " +
+            "having package = ?1 " +
+            "order by avg_time desc", nativeQuery = true)
+    Map<String, String> findAverageTimeByChannelPackage(String channel);
 }

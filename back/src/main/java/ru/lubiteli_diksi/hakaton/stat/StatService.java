@@ -52,6 +52,10 @@ public class StatService {
         return repository.findAgeStats(age);
     }
 
+    public Map<String, String> getAverageTimeByChannelPackage(String channel) {
+        return repository.findAverageTimeByChannelPackage(channel);
+    }
+
     public Map<String, Integer> getAverageTimeByAgeAndCategory(String age) {
         Map<String, Integer> map = new HashMap<>();
 

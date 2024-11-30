@@ -39,6 +39,11 @@ public class StatController {
         return service.getMostPopularDeviceSubcategories();
     }
 
+    @GetMapping(value = "/channels/avgTime/{channel}")
+    public Map<String, String> getAverageTimeByChannelPackage(@PathVariable String channel) {
+        return service.getAverageTimeByChannelPackage(channel);
+    }
+
     @GetMapping(value = "/gender/{gender}")
     public List<Stat> getGenderStats(@PathVariable String gender) {
         return service.getGenderStats(gender);
