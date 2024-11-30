@@ -1,0 +1,106 @@
+.clients {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+
+  &__content {
+    width: 65%;
+    background-color: #fff;
+    box-shadow: 0 0 8px 1px rgba(0, 124, 170, 0.5);
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  &__table {
+    width: 100%;
+  }
+
+  &__table-header {
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__table-title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &__table-buttons {
+    display: flex;
+  }
+
+  &__table-button {
+    border-radius: 0;
+    border-bottom: 2px solid #0b82ae;
+    border-top: 2px solid #0b82ae;
+    border-left: 0;
+    border-right: 1px solid #0b82ae;
+    background-color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  &__table-button:hover {
+    background-color: rgba(11, 130, 174, 0.3);
+  }
+
+  &__table-button:first-child {
+    border-radius: 5px 0 0 5px;
+    border-left: 2px solid #0b82ae;
+  }
+
+  &__table-button:last-child {
+    border-radius: 0 5px 5px 0;
+    border-right: 2px solid #0b82ae;
+  }
+
+  &__table-button_active {
+    background-color: #0b82ae;
+    color: #fff;
+  }
+
+  &__table-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    transition: 0.2s;
+    border-radius: 15px;
+  }
+
+  &__table-row:hover {
+    background-color: #84d2ed;
+  }
+
+  &__table-id {
+    text-align: center;
+    width: 25%;
+  }
+
+  &__table-gender {
+    text-align: center;
+    width: 10%;
+  }
+
+  &__table-age {
+    text-align: center;
+    width: 15%;
+  }
+
+  &__table-address {
+    text-align: center;
+    width: 50%;
+  }
+
+  &__table-notfound {
+    width: 100%;
+    text-align: center;
+  }
+}

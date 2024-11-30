@@ -2,5 +2,11 @@
 @import url("vendor/fonts.css");
 @import url("components/App/App.scss");
 @import url("components/Header/Header.scss");
+@import url("components/Clients/Clients.scss");
+@import url("components/Map/ClientsMap.scss");
+@import url("components/Stats/Stats.scss");
+@import url("components/Charts/Charts.scss");
+@import url("components/Channels/Channels.scss");
+@import url("components/Dashboard/Dashboard.scss");
 
 /*# sourceMappingURL=index.css.map */

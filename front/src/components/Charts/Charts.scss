@@ -1,0 +1,26 @@
+.charts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__subtitle {
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    color: #2e2e2e;
+  }
+
+  &__field {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+  }
+
+  &__chart {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
