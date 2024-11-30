@@ -23,4 +23,8 @@ public class Package {
 
     @Column(name = "channel_count")
     private Integer channelCount;
+
+    public Package(String name) {
+        this.name = name;
+    }
 }
