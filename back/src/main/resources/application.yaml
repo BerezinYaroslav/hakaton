@@ -12,3 +12,13 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   liquibase:
     change-log: liquibase/db-hakaton-changelog.xml
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 300MB
+
+minio:
+  bucket: files
+  url: http://localhost:9000
+  accessKey: admin
+  secretKey: admin

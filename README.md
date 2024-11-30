@@ -14,8 +14,9 @@
 
 ## Сервисы
 * [Figma](https://www.figma.com/board/biT8SkzqGvvkH52GVWjzvo/%7B02%7D-%7B%25D0%259B%25D1%258E%25D0%25B1%25D0%25B8%25D1%2582%25D0%25B5%25D0%25BB%25D0%25B8-%25D0%2594%25D0%2598%25D0%259A%25D0%25A1%25D0%2598%7D?node-id=4022-1110&node-type=table&t=fgs4fJUfPLyeo1cv-0)
-* [Презентация]()
+* [Презентация](https://drive.google.com/file/d/1ZaHZFkrgaV5PT30-VEZUFAWXcY1jhxcK/view?usp=drive_link)
 * [Локальный Swagger](http://localhost:8080/swagger-ui/index.html#/)
-* [Локальный Minio]()
+* [Локальный Minio](http://localhost:9000)
 
+## Архитектура (компоненты системы)
 ![img.png](img/img.png)
