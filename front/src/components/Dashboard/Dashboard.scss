@@ -9,6 +9,12 @@
   box-sizing: border-box;
   padding: 50px;
 
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
   &__filtes {
     align-self: center;
   }
@@ -43,6 +49,32 @@
   &__button_active {
     background-color: #0b82ae;
     color: #fff;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    border: 2px solid #0b82ae;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  &__link:hover {
+    background-color: rgba(11, 130, 174, 0.3);
   }
 
   &__item {

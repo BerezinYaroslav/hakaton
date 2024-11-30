@@ -30,6 +30,7 @@ function Channels() {
   );
 
   const [elkaData, setElkaData] = useState([]);
+  const [channelData, setChannelData] = useState({});
 
   const options = {
     responsive: true,
@@ -106,7 +107,7 @@ function Channels() {
     datasets: [
       {
         label: 'Среднее время просмотра (мин)',
-        data: [1201, 1986, 376, 554, 222, 3002, 665, 998, 1004, 1283, 1223, 1943, 334, 513, 256, 323, 1232, 1766, 1098, 1212, 1065],
+        data: [Number(channelData['Спорт+ HD']?.avg_time), Number(channelData['КХЛ HD']?.avg_time), Number(channelData['Спорт 1 HD']?.avg_time), Number(channelData['Матч Премьер']?.avg_time), Number(channelData['Матч! Футбол']?.avg_time), Number(channelData['TV Бизнес Спорт']?.avg_time), Number(channelData['TV Бизнес']?.avg_time), Number(channelData.Viasat?.avg_time), Number(channelData['Дождь']?.avg_time), Number(channelData.Unicast?.avg_time), Number(channelData['Базовый Блок 1']?.avg_time), Number(channelData['Базовый Блок 3']?.avg_time), Number(channelData['Базовый Блок 4']?.avg_time), Number(channelData.pack129?.avg_time), Number(channelData.pack123?.avg_time), Number(channelData['Для взрослых']?.avg_time), Number(channelData['Настрой кино']?.avg_time), Number(channelData['Настрой кино Акция']?.avg_time), Number(channelData['viju+']?.avg_time), Number(channelData['Путешествия HD']?.avg_time), Number(channelData['Общедоступный']?.avg_time)],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -152,6 +153,56 @@ function Channels() {
       });
   }, []);
 
+  useEffect(() => {
+    const acc = {};
+
+    api.getChannelStats('Unicast')
+      .then((res) => acc.Unicast = res);
+    api.getChannelStats('pack129')
+      .then((res) => acc.pack129 = res);
+    api.getChannelStats('Viasat')
+      .then((res) => acc.Viasat = res);
+    api.getChannelStats('Матч Премьер')
+      .then((res) => acc['Матч Премьер'] = res);
+    api.getChannelStats('Настрой кино Акция')
+      .then((res) => acc['Настрой кино Акция'] = res);
+    api.getChannelStats('Путешествия HD')
+      .then((res) => acc['Путешествия HD'] = res);
+    api.getChannelStats('TV Бизнес')
+      .then((res) => acc['TV Бизнес'] = res);
+    api.getChannelStats('Спорт+ HD')
+      .then((res) => acc['Спорт+ HD'] = res);
+    api.getChannelStats('viju+')
+      .then((res) => acc['viju+'] = res);
+    api.getChannelStats('Спорт 1 HD')
+      .then((res) => acc['Спорт 1 HD'] = res);
+    api.getChannelStats('Базовый Блок 4')
+      .then((res) => acc['Базовый Блок 4'] = res);
+    api.getChannelStats('Базовый Блок 3')
+      .then((res) => acc['Базовый Блок 3'] = res);
+    api.getChannelStats('Общедоступный')
+      .then((res) => acc['Общедоступный'] = res);
+    api.getChannelStats('Матч! Футбол')
+      .then((res) => acc['Матч! Футбол'] = res);
+    api.getChannelStats('Дождь')
+      .then((res) => acc['Дождь'] = res);
+    api.getChannelStats('Для взрослых')
+      .then((res) => acc['Для взрослых'] = res);
+    api.getChannelStats('pack123')
+      .then((res) => acc.pack123 = res);
+    api.getChannelStats('Базовый Блок 1')
+      .then((res) => acc['Базовый Блок 1'] = res);
+    api.getChannelStats('TV Бизнес Спорт')
+      .then((res) => acc['TV Бизнес Спорт'] = res);
+    api.getChannelStats('КХЛ HD')
+      .then((res) => acc['КХЛ HD'] = res);
+    api.getChannelStats('Настрой кино')
+      .then((res) => {
+        acc['Настрой кино'] = res;
+        setChannelData(acc);
+      });
+  }, []);
+
   return (
     <div className="channels">
       <h1 className="channels__title">
@@ -168,6 +219,10 @@ function Channels() {
           )
         }
       </div>
+
+      <button onClick={() => console.log(channelData)}>
+        sqsa
+      </button>
 
       <div className="channels__radar">
         <h2 className="channels__subtitle">
