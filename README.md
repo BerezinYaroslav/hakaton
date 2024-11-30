@@ -30,4 +30,4 @@
 ![maket_1.jpeg](img/maket_1.jpeg)
 
 ## Один из графиков кластерного анализа
-![cluster_analysis_3.jpeg](img/cluster_analysis_3.jpeg)
+![cluster_analysis_1.jpeg](img/cluster_analysis_1.jpeg)
