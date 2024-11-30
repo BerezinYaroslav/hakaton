@@ -3,6 +3,7 @@ package ru.lubiteli_diksi.hakaton.client;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController

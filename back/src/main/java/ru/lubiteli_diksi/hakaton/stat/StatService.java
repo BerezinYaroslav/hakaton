@@ -77,32 +77,12 @@ public class StatService {
     }
 
     public void deleteStats() {
-        log.info("Delete stats");
+        log.info("Delete all stats");
         repository.deleteAll();
     }
 
     public void deleteStatById(Integer id) {
-        log.info("Delete a stat with id " + id);
+        log.info("Delete a stat with id {}", id);
         repository.deleteById(id);
     }
-
-//    public void executePython(String[] args) throws IOException, InterruptedException {
-//        String Script_Path = "C:\\Users\\Mironov\\script.py";
-//        ProcessBuilder Process_Builder = new
-//                ProcessBuilder("python",Script_Path)
-//                .inheritIO();
-//
-//        Process Demo_Process = Process_Builder.start();
-//        Demo_Process.waitFor();
-//
-//        BufferedReader Buffered_Reader = new BufferedReader(
-//                new InputStreamReader(
-//                        Demo_Process.getInputStream()
-//                ));
-//        String Output_line = "";
-//
-//        while ((Output_line = Buffered_Reader.readLine()) != null) {
-//            System.out.println(Output_line);
-//        }
-//    }
 }

@@ -20,7 +20,6 @@ public class ClientService {
     public List<Client> getClients() {
         log.info("get clients");
         return repository.findAll();
-
     }
 
     public Client findClientByClient(String client) {
@@ -40,7 +39,7 @@ public class ClientService {
     }
 
     public void deleteClientByClient(String client) {
-        log.info("Delete a client " + client);
+        log.info("Delete a client with id {}", client);
         repository.deleteById(client);
     }
 }

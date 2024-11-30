@@ -39,8 +39,7 @@ public class ChannelService {
     }
 
     public void deleteChannelById(Integer id) {
-        log.info("Delete a channel with id " + id);
+        log.info("Delete a channel with id {}", id);
         channelRepository.deleteById(id);
     }
-
 }

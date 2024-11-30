@@ -1,7 +1,7 @@
 package ru.lubiteli_diksi.hakaton.address;
 
-import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,7 +39,7 @@ public class AddressService {
     }
 
     public void deleteAddressByAddress(String address) {
-        log.info("Delete a address " + address);
+        log.info("Delete a address with address {}", address);
         addressRepository.deleteById(address);
     }
 }

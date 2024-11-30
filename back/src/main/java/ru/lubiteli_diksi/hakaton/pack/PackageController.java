@@ -18,7 +18,7 @@ public class PackageController {
         return service.getPackages();
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{name}")
     public Package getPackageByName(@PathVariable String name) {
         return service.findPackageByName(name);
     }
@@ -38,7 +38,7 @@ public class PackageController {
         service.deletePackages();
     }
 
-    @DeleteMapping(value = "/{id}", produces = "application/json")
+    @DeleteMapping(value = "/{name}", produces = "application/json")
     public void deletePackageByName(@PathVariable String name) {
         service.deletePackageByName(name);
     }

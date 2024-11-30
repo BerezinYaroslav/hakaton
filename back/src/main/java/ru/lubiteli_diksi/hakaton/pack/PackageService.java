@@ -39,9 +39,7 @@ public class PackageService {
     }
 
     public void deletePackageByName(String name) {
-        log.info("Delete a package " + name);
+        log.info("Delete a package with {}", name);
         repository.deleteById(name);
     }
-
-
 }
