@@ -1,4 +1,4 @@
-# FreedomDashboardTV
+# FreedomDashboardTV - [Ссылка на развернутый веб-сервис](http://freedom-dashboard-tv.ru)
 
 ## Команда "Любители ДИКСИ"
 

@@ -11,7 +11,7 @@ db_config = {
 }
 
 # Имя входного CSV-файла
-input_filename = "epg_stat_2024_10.csv"
+input_filename = "epg_stat_300000.csv"
 
 # SQL-запрос для вставки данных
 insert_query = """
@@ -38,9 +38,6 @@ try:
         for row in reader:
             count += 1
             print(count)
-
-            if count >= 100000:
-                break
 
             # Разбираем строку
             client = row[0]
