@@ -13,18 +13,80 @@ class Api {
     return Promise.reject(`Ошибка: ${response.status}`);
   }
 
-  getCoordinates(address) {
-    return axios.get(`https://geocode-maps.yandex.ru/1.x/?apikey=4f649acd-f8a6-4d9e-b485-4955e974c616&geocode=${address}&format=json`, {
+  getClients() {
+    return axios.get(`${this._baseUrl}/clients`, {
       headers: {
         'Content-Type': 'application/json',
       },
     })
-      .then((res) => this._checkResponse(res))
-      .catch((err) => console.log(err));
+      .then((res) => this._checkResponse(res));
   }
 
-  getClients() {
-    return axios.get(`${this._baseUrl}/clients`, {
+  getPopularDevices() {
+    return axios.get(`${this._baseUrl}/stats/devices`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => this._checkResponse(res));
+  }
+
+  getPopularChannels() {
+    return axios.get(`${this._baseUrl}/stats/channels`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => this._checkResponse(res));
+  }
+
+  getPopularCategories() {
+    return axios.get(`${this._baseUrl}/stats/categories`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => this._checkResponse(res));
+  }
+
+  getPopularSubcategories() {
+    return axios.get(`${this._baseUrl}/stats/subcategories`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => this._checkResponse(res));
+  }
+
+  getAllStats() {
+    return axios.get(`${this._baseUrl}/stats`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => this._checkResponse(res));
+  }
+
+  getFilteredGenderStats(filter) {
+    return axios.get(`${this._baseUrl}/stats/gender/${filter}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => this._checkResponse(res));
+  }
+
+  getFilteredStats(filter) {
+    return axios.get(`${this._baseUrl}/stats/age/${filter}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => this._checkResponse(res));
+  }
+
+  getElkaStats(age) {
+    return axios.get(`${this._baseUrl}/stats/elka/${age}`, {
       headers: {
         'Content-Type': 'application/json',
       },

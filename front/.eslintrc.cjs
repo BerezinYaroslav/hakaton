@@ -29,6 +29,7 @@ module.exports = {
     'import/no-cycle': 'off',
     'react/jsx-no-bind': 'off',
     'jsx-a11y/control-has-associated-label': 'off',
-    'jsx-a11y/label-has-associated-control': 'off'
+    'jsx-a11y/label-has-associated-control': 'off',
+    'max-len': 'off'
   },
 }
