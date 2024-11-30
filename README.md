@@ -24,7 +24,7 @@
 * [Исходные csv-файлы](https://drive.google.com/drive/folders/1CBA3F3PWR7cYBzd05fxEMS-Ze_0VKMy0?usp=drive_link)
 
 ## Архитектура (компоненты системы)
-![architecture.png](img/architecture.png)
+![architecture.jpg](img/architecture.jpg)
 
 ## Один из макетов
 ![maket_1.jpeg](img/maket_1.jpeg)
